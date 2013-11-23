@@ -8,6 +8,7 @@
 " --------------------
 nmap <leader>su :call SftpUpload()<CR>
 nmap <leader>sd :call SftpDownload()<CR>
+nmap <leader>run :call RunOnline()<CR>
 autocmd BufWritePost * :call SftpAutoUpload()
 autocmd BufReadPre * :call SftpAutoDownload()
 
@@ -132,5 +133,30 @@ sftp.put(filepath, localpath)
 
 sftp.close()
 transport.close()
+EOF
+endfunction
+function! RunOnline()
+
+    let conf = SftpGetCfg()
+    if empty(conf)
+        return
+    endif    
+python << EOF
+import vim, urllib2, paramiko, re
+host = vim.eval("conf['host']")
+port = int(vim.eval("conf['port']"))
+username = vim.eval("conf['user']")
+password = vim.eval("conf['pass']")
+filepath = re.sub(r"\\","/",vim.eval("conf['local_path']"))
+localpath = re.sub(r"\\","/",vim.eval("conf['remote_fold']"))
+
+s = paramiko.SSHClient()
+s.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+s.connect(host, port, username, password)
+command = vim.eval("conf['command']")
+(stdin, stdout, stderr) = s.exec_command(command)
+for line in stdout.readlines():
+	print line
+s.close()
 EOF
 endfunction

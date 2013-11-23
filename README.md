@@ -7,7 +7,7 @@ After you modify a local file and save, the plugin will upload the file, overwri
 
 If you have some shell script in the remote server needed to run to deploy the project, just configure it in .vimrc, and type "\run" in vim, it will be done.
 
-Part of the plugin is written in Python, and worked well on Windows(Local machine is Windows, and the remote server is linux).
+Part of the plugin is written in Python, and work well on Windows(Local machine is Windows, and the remote server is linux).
 
 Installation
 ----

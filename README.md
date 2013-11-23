@@ -33,22 +33,22 @@ Usage
 Description
 ----
 Please write config in .vimrc file following like.
-	let g:vim_sftp_configs = {
-	\      'sample_server_1' : {
-	\       'upload_on_save'   : 1,
-	\       'download_on_open' : 0,
-	\       'confirm_downloads': 0,
-	\       'confirm_uploads'  : 0,
-	\       'local_base_path'  : 'E:\Projects\src',
-	\       'local_base_path_regex'  : 'E:.Projects.src',
-	\       'remote_base_path' : '/data/qspace/src',
-	\       'command' : '/home/qspace/src/online.sh -param',
-	\       'user' : 'root',
-	\       'pass' : 'pass',
-	\       'host' : 'xxx.xxx.xxx.xxx',
-	\       'port' : '36000'
-	\   }
-	\}
+    let g:vim_sftp_configs = {
+    \      'sample_server_1' : {
+    \       'upload_on_save'   : 1,
+    \       'download_on_open' : 0,
+    \       'confirm_downloads': 0,
+    \       'confirm_uploads'  : 0,
+    \       'local_base_path'  : 'E:\Projects\src',
+    \       'local_base_path_regex'  : 'E:.Projects.src',
+    \       'remote_base_path' : '/data/qspace/src',
+    \       'command' : '/home/qspace/src/online.sh -param',
+    \       'user' : 'root',
+    \       'pass' : 'pass',
+    \       'host' : 'xxx.xxx.xxx.xxx',
+    \       'port' : '36000'
+    \   }
+    \}
 
 sample1
  > Edit file : E:\Projects\src\file.php  

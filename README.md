@@ -16,6 +16,7 @@ You must have vim compiled with +python support. You can check that using the co
     vim --version | grep +python
 
 and then installed paramiko module
+
 Reference:http://referhere.blogspot.com/2011/11/how-to-install-paramiko-on-windows.html
 
 The last, install this plugin using [vundle],[pathogen] or your favorite Vim package manager.
@@ -35,6 +36,7 @@ Usage
 Description
 ----
 Please write config in .vimrc file following like.
+
     let g:vim_sftp_configs = {
     \      'sample_server_1' : {
     \       'upload_on_save'   : 1,

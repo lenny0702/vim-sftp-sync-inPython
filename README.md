@@ -12,7 +12,9 @@ Part of the plugin is written in Python, and worked well on Windows(Local machin
 Installation
 ----
 You must have vim compiled with +python support. You can check that using the command:
+
     vim --version | grep +python
+
 and then installed paramiko module
 Reference:http://referhere.blogspot.com/2011/11/how-to-install-paramiko-on-windows.html
 
